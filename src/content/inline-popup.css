@@ -1,0 +1,77 @@
+#translator-inline-popup {
+  position: absolute;
+  z-index: 2147483647;
+  width: min(320px, calc(100vw - 16px));
+  color: #2a241f;
+  font-family: "Segoe UI", "Noto Sans", sans-serif;
+  background:
+    radial-gradient(circle at 15% 10%, rgb(255 255 255 / 35%), transparent 38%),
+    linear-gradient(165deg, #ede1cb, #ddc7a2);
+  border: 1px solid #b99d7d;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgb(63 38 19 / 25%);
+  overflow: hidden;
+}
+
+#translator-inline-popup .txp-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  border-bottom: 1px solid #ccb08f;
+}
+
+#translator-inline-popup .txp-title {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+#translator-inline-popup .txp-close {
+  border: 1px solid #b99d7d;
+  border-radius: 999px;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255 255 255 / 40%);
+  cursor: pointer;
+  color: #4f3624;
+}
+
+#translator-inline-popup .txp-status {
+  font-size: 11px;
+  padding: 6px 10px 0;
+  color: #4f3624;
+}
+
+#translator-inline-popup .txp-status.err {
+  color: #992b2b;
+}
+
+#translator-inline-popup .txp-result {
+  padding: 8px 10px 10px;
+  font-size: 13px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  max-height: 220px;
+  overflow: auto;
+}
+
+#translator-inline-popup .txp-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 10px 10px;
+}
+
+#translator-inline-popup .txp-copy {
+  border: 1px solid #b99d7d;
+  border-radius: 8px;
+  background: rgb(255 255 255 / 40%);
+  color: #4f3624;
+  font-size: 12px;
+  line-height: 1;
+  padding: 6px 10px;
+  cursor: pointer;
+}

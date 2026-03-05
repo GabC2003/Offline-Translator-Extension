@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "Offline Translator Wood",
+  "version": "0.1.0",
+  "description": "Local-first translator extension powered by Chrome built-in Translator API.",
+  "icons": {
+    "16": "src/assets/icons/icon16.png",
+    "48": "src/assets/icons/icon48.png",
+    "128": "src/assets/icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Offline Translator",
+    "default_icon": {
+      "16": "src/assets/icons/icon16.png",
+      "48": "src/assets/icons/icon48.png",
+      "128": "src/assets/icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "src/background/service-worker.js",
+    "type": "module"
+  },
+  "permissions": [
+    "sidePanel",
+    "contextMenus",
+    "storage"
+  ],
+  "side_panel": {
+    "default_path": "src/sidepanel/sidepanel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "src/content/inline-popup.js"
+      ],
+      "css": [
+        "src/content/inline-popup.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

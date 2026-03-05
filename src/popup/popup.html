@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Translate to Chinese</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <main class="panel">
+      <header class="panel-header">
+        <div>
+          <h1>Translate to Chinese</h1>
+          <p>Right-click text, then translate in this popup.</p>
+        </div>
+        <span id="status-chip" class="status-chip">Idle</span>
+      </header>
+
+      <p id="status-message" class="status-message" hidden></p>
+      <progress id="download-progress" max="1" value="0" hidden></progress>
+
+      <section class="editor-grid">
+        <label>
+          <span>Input</span>
+          <textarea id="source-text" placeholder="Selected text will appear here"></textarea>
+        </label>
+        <label>
+          <span>Chinese Translation</span>
+          <textarea id="target-text" readonly placeholder="Translation appears here"></textarea>
+        </label>
+      </section>
+
+      <footer class="actions">
+        <button id="translate-btn" type="button">Translate</button>
+        <button id="copy-btn" class="ghost-btn" type="button">Copy</button>
+        <button id="clear-btn" class="ghost-btn" type="button">Clear</button>
+      </footer>
+    </main>
+
+    <script type="module" src="./popup.js"></script>
+  </body>
+</html>

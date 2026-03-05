@@ -1,0 +1,9 @@
+{
+  "name": "translator-extension",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node tests/manifest.test.js && node tests/messaging.test.js && node tests/context-menu-options.test.js && node tests/translator-session.test.js && node tests/ui-state.test.js && node tests/popup-translation-engine.test.js"
+  }
+}

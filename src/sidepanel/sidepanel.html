@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offline Translator</title>
+    <link rel="stylesheet" href="./sidepanel.css" />
+  </head>
+  <body>
+    <main class="panel">
+      <header class="panel-header">
+        <div>
+          <h1>Offline Translator</h1>
+          <p>Manual source + target language</p>
+        </div>
+        <span id="status-chip" class="status-chip">Idle</span>
+      </header>
+      <p id="status-message" class="status-message" hidden></p>
+
+      <section class="language-row">
+        <label>
+          <span>Source</span>
+          <select id="source-language"></select>
+        </label>
+        <button id="swap-languages" class="ghost-btn" type="button" aria-label="Swap languages">
+          ⇄
+        </button>
+        <label>
+          <span>Target</span>
+          <select id="target-language"></select>
+        </label>
+      </section>
+
+      <section class="editor-grid">
+        <label>
+          <span>Input</span>
+          <textarea id="source-text" placeholder="Type or paste text"></textarea>
+        </label>
+        <label>
+          <span>Translation</span>
+          <textarea id="target-text" readonly placeholder="Translation appears here"></textarea>
+        </label>
+      </section>
+
+      <progress id="download-progress" max="1" value="0" hidden></progress>
+
+      <footer class="actions">
+        <button id="translate-btn" type="button">Translate</button>
+        <button id="copy-btn" type="button" class="ghost-btn">Copy</button>
+        <button id="clear-btn" type="button" class="ghost-btn">Clear</button>
+      </footer>
+    </main>
+
+    <script type="module" src="./sidepanel.js"></script>
+  </body>
+</html>
