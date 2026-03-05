@@ -7,6 +7,7 @@ import {
   MENU_TARGET_LANGUAGE_OPTIONS,
   getTargetLanguageByMenuId
 } from "./context-menu-options.js";
+import { tryOpenSidePanel } from "./sidepanel-error.js";
 
 async function ensureSidePanelBehavior() {
   if (!chrome.sidePanel?.setPanelBehavior) {
@@ -64,7 +65,7 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
   }
 
   await chrome.storage.local.set({ [STORAGE_KEY_PENDING_SELECTION]: text });
-  if (tab?.windowId && chrome.sidePanel?.open) {
-    await chrome.sidePanel.open({ windowId: tab.windowId });
+  if (tab?.windowId) {
+    await tryOpenSidePanel(tab.windowId);
   }
 });

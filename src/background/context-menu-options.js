@@ -1,4 +1,5 @@
 import {
+  CONTEXT_MENU_TRANSLATE_SELECTION,
   CONTEXT_MENU_TRANSLATE_TO_EN,
   CONTEXT_MENU_TRANSLATE_TO_ZH
 } from "../common/messages.js";
@@ -17,6 +18,9 @@ export const MENU_TARGET_LANGUAGE_OPTIONS = [
 ];
 
 export function getTargetLanguageByMenuId(menuItemId) {
+  if (menuItemId === CONTEXT_MENU_TRANSLATE_SELECTION) {
+    return "zh";
+  }
   for (const item of MENU_TARGET_LANGUAGE_OPTIONS) {
     if (item.id === menuItemId) {
       return item.targetLanguage;

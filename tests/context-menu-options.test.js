@@ -13,5 +13,6 @@ test("menu options include english and chinese targets", () => {
 test("getTargetLanguageByMenuId resolves known menu ids", () => {
   assert.equal(getTargetLanguageByMenuId("translate-selection-to-zh"), "zh");
   assert.equal(getTargetLanguageByMenuId("translate-selection-to-en"), "en");
+  assert.equal(getTargetLanguageByMenuId("translate-selection"), "zh");
   assert.equal(getTargetLanguageByMenuId("other"), null);
 });

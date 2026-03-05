@@ -18,5 +18,8 @@ test("createSelectionMessage builds valid payload", () => {
 test("isSelectionMessage rejects malformed payload", () => {
   assert.equal(isSelectionMessage({ type: "other", text: "x" }), false);
   assert.equal(isSelectionMessage({ type: MESSAGE_TYPE_SELECTION_TRANSLATE }), false);
-  assert.equal(isSelectionMessage({ type: MESSAGE_TYPE_SELECTION_TRANSLATE, text: "x" }), false);
+});
+
+test("isSelectionMessage accepts legacy payload without target language", () => {
+  assert.equal(isSelectionMessage({ type: MESSAGE_TYPE_SELECTION_TRANSLATE, text: "x" }), true);
 });

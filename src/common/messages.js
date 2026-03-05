@@ -17,7 +17,6 @@ export function isSelectionMessage(payload) {
   return (
     Boolean(payload) &&
     payload.type === MESSAGE_TYPE_SELECTION_TRANSLATE &&
-    typeof payload.text === "string" &&
-    typeof payload.targetLanguage === "string"
+    typeof payload.text === "string"
   );
 }

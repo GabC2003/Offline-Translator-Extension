@@ -30,8 +30,7 @@
     return (
       Boolean(message) &&
       message.type === "selection-translate" &&
-      typeof message.text === "string" &&
-      typeof message.targetLanguage === "string"
+      typeof message.text === "string"
     );
   }
 
